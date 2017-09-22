@@ -8,7 +8,6 @@ include_directories(SYSTEM
 add_executable(executable
 	hello_world.cpp
 	1.cpp
-	
 )
 
 target_link_libraries(executable)
