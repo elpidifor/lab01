@@ -1,6 +1,7 @@
 #include <iostream>
 
 void main() {
-    double pi=3.1;
-    std::cout << pi << std::endl;
+    double Pi;
+    Pi = 3.14;
+    std::cout << Pi << std::endl;
 }
