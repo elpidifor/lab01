@@ -1,71 +1,79 @@
 #include <iostream>
+#include <string>
+#include "math.h"
 
 int main() {
-    //Вывести на экран число π с точностью до сотых;
-    double Pi;
-    Pi = 3.14;
-    std::cout << Pi << std::endl;
-    //Вывести на одной строке числа 1, 13 и 49 с одним пробелом между ними;
-    std::cout << 1 << " " << 13 << " " << 49 << std::endl;
-    //Вывести на одной строке числа 1, 13 и 49 с заданным символом между ними;
-    char smbl;
-    cin >> smbl;
-    std::cout << 1 << smbl << 13 << smbl << 49 << std::endl;
-    //Составить программу вывода на экран в одну строку трех любых чисел с двумя пробелами между ними;
-    char smbl1, smbl2, smbl3;
-    cin >> smbl1 >> smbl2 >> smbl3;
-    std::cout << smbl1 << "  " << smbl2 << "  " << smbl3 << std::endl;
-    //Составить программу:
-    //вычисления значения функции x=12a^2 + 7a - 12 при любом значении а
-    double a, x;
-    cin >> a;
-    x=12*a*a + 7*a - 12;
-    std::cout << x << std::endl;
-    //вычисления значения функции y=3x^3 + 4x^2 - 11x + 1 при любом значении x
-    double x, y;
-    cin >> x;
-    y=3*x*x*x + 4*x*x - 11*x + 1;
-    std::cout << x << std::endl;
-    //Известны объем и масса тела. Определить плотность материала этого тела;
-    double v, m, p;
-    cin >> v >> m;
-    p=m/v;
-    std::cout << p << std::endl;
-    //Составить программу решения линейного уравнения ax + b = 0 (a не равно 0);
-    double x, a, b;
-    cin >> a >> b;
-    x=(-1)*b/a;
-    std::cout << x << std::endl;
-    //Известны координаты на плоскости двух точек. Составить программу вычисления расстояния между ними;
-    double x1, y1, x2, y2, p;
-    cin >> x1 >> y1 >> x2 >> y2;
-    p=sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
-    std::cout << p << std::endl;
-    //Даны основания и высота равнобедренной трапеции. Найти периметр трапеции;
-    double a, b, h, p;
-    cin >> a >> b >> h;
-    p= a + b + 2*sqrt((a-b)*(a-b)/4 + h*h);
-    std::cout << p << std::endl;
-    //Найти площадь кольца по заданным внешнему и внутреннему радиусам;
-    double r1, r2, s;
-    cin >> r1 >> r2;
-    s= 3.14 * (r1-r2)*(r1-r2);
-    std::cout << s << std::endl;
-    //Дана длина ребра куба. Найти объем куба и площадь его боковой поверхности;
-    double a, s, v;
-    cin >> a;
-    s= 6*a*a;
-    v= a*a*a;
-    std::cout << v << p << std::endl;
-    //Дана сторона квадрата. Найти его периметр;
-    double a, p;
-    cin >> a;
-    p= 4*a;
-    std::cout << p << std::endl;
-    //Дан радиус окружности. Найти ее диаметр.
-    double r, d;
-    cin >> r;
-    d= 2*r;
-    std::cout << d << std::endl;
+	//Вывод числа Пи, округленного до сотых
+	std::cout << "pi = 3.14" << std::endl;
+	//Вывод чилел 1/13/49 с одним пробелом между ними
+	std::cout << "1 13 49" << std::endl;
+	//Вывод чилел 1/13/49 разделенных заданным символом
+	char chr1;
+	std::cin >> chr1;
+	std::cout << "1" << chr1 << "13" << chr1 << 49 << std::endl;
+	//Вывод трех любых чисел с двумя пробелами между ними
+	std::string str1;
+	std::string str2 = "";
+	std::cin >> str1;
+	str2 = str1 + ' ';
+	std::cin >> str1;
+	str2 = str2 + str1 + ' ';
+	std::cin >> str1;
+	str2 = str2 + str1 + ' ';
+	//Вычисление значения функции1
+	double a = 0;
+	std::cin >> a;
+	double x = 12 * a*a + 7 * a - 12;
+	double y = 3 * x * x * x + 4 * x * x - 11 * x + 1;
+	std::cout << x << std::endl;
+	std::cout << y << std::endl;
+	//Определение плотности по объему и массе
+	double v = 0;
+	std::cin >> v;
+	double m = 0;
+	std::cin >> m;
+	std::cout << m / v << std::endl;
+	//Решение функции
+	double b = 0;
+	std::cin >> b;
+	double c = 0;
+	std::cin >> c;
+	std::cout << (-c / b) << std::endl;
+	//Длина между двумя точками
+	double x1 = 0;
+	std::cin >> x1;
+	double y1 = 0;
+	std::cin >> y1;
+	double x2 = 0;
+	std::cin >> x2;
+	double y2 = 0;
+	std::cin >> y2;
+	double l = sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
+	std::cout << l << std::endl;
+	//Нахождение периметра равнобедренной трапеции
+	double a1 = 0;
+	std::cin >> a1;
+	double b1 = 0;
+	std::cin >> b1;
+	double h = 0;
+	std::cin >> h;
+	double d = sqrt(h * h + ((b1 - a1) * (b1 - a1) / 4));
+	std::cout << (a1 + b1 + d + d) << std::endl;
+	//Нахождение площади кольца
+	double lR = 0;
+	std::cin >> lR;
+	double bR = 0;
+	std::cin >> bR;
+	std::cout << 3.14 * (bR * bR - lR * lR);
+	//
+	double r = 0;
+	std::cin >> r;
+	std::cout << r * r * r << std::endl;
+	std::cout << 6 * r * r << std::endl;
+	//
+	double s = 0;
+	std::cin >> s;
+	std::cout << 4 * s << std::endl;
     return 0;
 }
+
